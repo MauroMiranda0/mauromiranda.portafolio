@@ -29,8 +29,7 @@ export function FloatingNav({ className }: FloatingNavProps) {
           <Menu />
         </span>
         <span className={styles.triggerCopy}>
-          <span className={styles.triggerLabel}>Menu</span>
-          <span className={styles.triggerTitle}>Navigation</span>
+          <span className={styles.triggerTitle}>Menu</span>
         </span>
       </button>
       <div
@@ -52,8 +51,7 @@ export function FloatingNav({ className }: FloatingNavProps) {
           <span className={`${styles.decor} ${styles.decorTwo}`} />
           <span className={`${styles.decor} ${styles.decorThree}`} />
           <div className={styles.sheetHeader}>
-            <p className={styles.sheetEyebrow}>Navigate</p>
-            <p className={styles.sheetTitle}>Explore</p>
+            <p className={styles.sheetTitle}>Explorar</p>
           </div>
           <nav className={styles.navList}>
             {navItems.map((item) => (

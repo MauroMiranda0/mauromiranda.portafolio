@@ -29,7 +29,7 @@ export function HeroSection() {
               className={styles.brandLogo}
               priority
             />
-          <span className={styles.tag}>Ingeniero Web</span>
+            <span className={styles.tag}>Ingeniero Web</span>
           </div>
           <p className={styles.description}>
             I build modern websites, web apps, and digital products with smooth interactions, scalable architectures,
@@ -37,10 +37,10 @@ export function HeroSection() {
           </p>
           <div className={styles.ctaGroup}>
             <Link href="#portfolio" className={`${styles.ctaButton} ${styles.primaryCta}`}>
-              Learn More
+              Saber más de mi
             </Link>
             <Link href="#contact" className={`${styles.ctaButton} ${styles.secondaryCta}`}>
-              Hire Me
+              Descargar CV
             </Link>
           </div>
           <div className={styles.buildMotif}>

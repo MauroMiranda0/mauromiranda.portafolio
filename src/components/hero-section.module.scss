@@ -92,7 +92,9 @@
 }
 
 .brandLogoWrapper {
-  width: clamp(220px, 40vw, 360px);
+  width: clamp(340px, 40vw, 400px);
+  padding-top: 5rem;
+  padding-bottom: 2rem;
 }
 
 .brandLogo {
