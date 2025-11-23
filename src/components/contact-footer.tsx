@@ -1,39 +1,42 @@
 import Link from 'next/link';
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Copyright } from './copyright';
+import styles from './contact-footer.module.scss';
+
+const socialLinks = [
+  { href: 'mailto:mauricio.vergara@example.com', label: 'Email', Icon: Mail },
+  { href: '#', label: 'LinkedIn', Icon: Linkedin, external: true },
+  { href: '#', label: 'GitHub', Icon: Github, external: true },
+];
 
 export function ContactFooter() {
   return (
-    <footer id="contact" className="w-full py-12 md:py-16 bg-primary text-primary-foreground">
-      <div className="container px-4 md:px-6 flex flex-col items-center justify-center text-center gap-8">
-        <div className="space-y-2">
-          <h3 className="font-headline text-2xl font-bold">Get in Touch</h3>
-          <p className="text-primary-foreground/70 max-w-md">
-            I'm currently open to new opportunities and collaborations. Feel free to reach out!
+    <footer id="contact" className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.heading}>
+          <h3 className={styles.title}>Get in Touch</h3>
+          <p className={styles.description}>
+            I&apos;m currently open to new opportunities and collaborations. Feel free to reach out!
           </p>
         </div>
-        <div className="flex items-center gap-4">
-          <Button asChild variant="outline" className="bg-transparent border-primary-foreground/50 text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-full" size="icon">
-            <Link href="mailto:mauricio.vergara@example.com" aria-label="Email">
-              <Mail className="h-5 w-5" />
+        <div className={styles.socials}>
+          {socialLinks.map(({ href, label, Icon, external }) => (
+            <Link
+              key={label}
+              href={href}
+              aria-label={label}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
+              className={styles.socialLink}
+            >
+              <Icon aria-hidden size={20} />
             </Link>
-          </Button>
-          <Button asChild variant="outline" className="bg-transparent border-primary-foreground/50 text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-full" size="icon">
-            <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <Linkedin className="h-5 w-5" />
-            </Link>
-          </Button>
-          <Button asChild variant="outline" className="bg-transparent border-primary-foreground/50 text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-full" size="icon">
-            <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <Github className="h-5 w-5" />
-            </Link>
-          </Button>
+          ))}
         </div>
-         <div className="flex items-center gap-2 text-primary-foreground/70">
-            <MapPin className="h-5 w-5" />
-            <span>San Francisco, CA</span>
-         </div>
+        <div className={styles.location}>
+          <MapPin aria-hidden size={20} />
+          <span>San Francisco, CA</span>
+        </div>
       </div>
       <Copyright />
     </footer>

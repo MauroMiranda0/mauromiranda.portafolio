@@ -1,0 +1,73 @@
+// Global design tokens for the SCSS migration.
+$color-navy: #004f6e;
+$color-cloud: #f5f5f5;
+$color-cyan: #00aeef;
+$color-gold: #f4b400;
+$color-charcoal: #1c1c1c;
+
+$font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+$font-headline: 'Space Grotesk', 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+$shadow-soft: 0 20px 45px rgba(0, 0, 0, 0.18);
+$shadow-strong: 0 35px 75px rgba(0, 0, 0, 0.25);
+
+@mixin hex-shape {
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+}
+
+:root {
+  --color-navy: #{$color-navy};
+  --color-cloud: #{$color-cloud};
+  --color-cyan: #{$color-cyan};
+  --color-gold: #{$color-gold};
+  --color-charcoal: #{$color-charcoal};
+
+  --font-body: #{$font-body};
+  --font-headline: #{$font-headline};
+
+  --shadow-soft: #{$shadow-soft};
+  --shadow-strong: #{$shadow-strong};
+
+  --background: 0 0% 96.1%;
+  --foreground: 0 0% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 11%;
+  --primary: 196.9 100% 21.6%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 90%;
+  --secondary-foreground: 0 0% 11%;
+  --muted: 0 0% 90%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 196.3 100% 46.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 196.3 100% 46.9%;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 0 0% 11%;
+  --foreground: 0 0% 96.1%;
+  --card: 0 0% 15%;
+  --card-foreground: 0 0% 96.1%;
+  --popover: 0 0% 15%;
+  --popover-foreground: 0 0% 96.1%;
+  --primary: 196.3 100% 46.9%;
+  --primary-foreground: 0 0% 11%;
+  --secondary: 0 0% 20%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 20%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 196.9 100% 21.6%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 25%;
+  --input: 0 0% 25%;
+  --ring: 196.3 100% 46.9%;
+}

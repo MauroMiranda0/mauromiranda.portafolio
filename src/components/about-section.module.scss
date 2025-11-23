@@ -1,0 +1,57 @@
+@use '../styles/variables' as vars;
+
+.section {
+  width: 100%;
+  padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 6vw, 4rem);
+  background: var(--color-cloud);
+}
+
+.container {
+  margin: 0 auto;
+  width: min(1200px, 95vw);
+}
+
+.content {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.title {
+  font-family: var(--font-headline);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  color: var(--color-navy);
+  line-height: 1.1;
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(28, 28, 28, 0.85);
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.portrait {
+  width: clamp(240px, 28vw, 320px);
+  height: clamp(240px, 28vw, 320px);
+  border-radius: 999px;
+  object-fit: cover;
+  border: 6px solid var(--color-cloud);
+  box-shadow: 0 30px 60px rgba(0, 79, 110, 0.25);
+}

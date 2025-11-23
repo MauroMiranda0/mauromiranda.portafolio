@@ -1,0 +1,84 @@
+@use '../styles/variables' as vars;
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background: linear-gradient(120deg, rgba(vars.$color-navy, 0.97), rgba(vars.$color-cyan, 0.3));
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 35px rgba(vars.$color-charcoal, 0.15);
+  overflow: hidden;
+}
+
+.decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hex {
+  position: absolute;
+  width: clamp(4.5rem, 6vw, 7rem);
+  height: clamp(5.5rem, 8vw, 8rem);
+  opacity: 0.7;
+  filter: drop-shadow(0 15px 35px rgba(vars.$color-charcoal, 0.15));
+  @include vars.hex-shape;
+}
+
+.hexPrimary {
+  background: rgba(vars.$color-cyan, 0.25);
+  top: -1rem;
+  left: 3rem;
+}
+
+.hexOutline {
+  border: 2px solid rgba(vars.$color-gold, 0.5);
+  background: transparent;
+  right: 8rem;
+  bottom: -2.5rem;
+}
+
+.hexAccent {
+  background: rgba(vars.$color-navy, 0.2);
+  top: -2rem;
+  right: 1rem;
+  width: clamp(5rem, 7vw, 8.5rem);
+  height: clamp(6rem, 9vw, 9.5rem);
+  filter: drop-shadow(0 25px 45px rgba(vars.$color-charcoal, 0.2));
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 80px;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.6rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  box-shadow: 0 12px 25px rgba(vars.$color-navy, 0.2);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.brand:focus-visible {
+  outline: 2px solid vars.$color-gold;
+  outline-offset: 3px;
+}
+
+.brand:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(vars.$color-navy, 0.35);
+}
+
+.logo {
+  height: 2rem;
+  width: auto;
+  display: block;
+}
